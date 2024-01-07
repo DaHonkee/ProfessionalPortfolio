@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+  <link href="//vjs.zencdn.net/8.3.0/video-js.min.css" rel="stylesheet">
+  <script src="//vjs.zencdn.net/8.3.0/video.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <meta charset="UTF-8">
+  <title>Your Portfolio</title>
+  <!-- Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    @media (max-width: 768px) {
+      .modal-lg {
+        max-width: 90%;
+      }
+      #pdf-canvas {
+        max-width: 100%;
+        height: auto;
+      }
+      /* Add more responsive styles as needed */
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 2em;
+    }
+
+    section {
+      padding: 3em;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #343a40;
+    }
+
+    .media-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .media-item {
+      margin: 1em;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .media-item:hover {
+      transform: scale(1.1);
+    }
+
+    .modal-content {
+      text-align: center;
+      padding: 2em;
+    }
+    .modal-body{
+
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #resume a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #resume a:hover {
+      text-decoration: underline;
+    }
+
+    .resume-download-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .resume-download-btn:hover {
+      background-color: #0056b3;
+    }
+    #contactme-button{
+      background-color: rgba(0,0,0,0);
+      width:100px;
+      height:100px
+    }
+ .is-centered{
+   margin: auto 0;
+ }
+ #contactclickbutton{
+   margin-left: 45vw;
+ }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Your Name</h1>
+  <p>Web Developer</p>
+</header>
+
+<section id="videos">
+  <h2>My Presentations</h2>
+  <div class="media-container">
+    <div class="media-item" data-toggle="modal" data-target="#videoModal1">
+      <img src="https://www.svgrepo.com/show/13672/play-button.svg" alt="Play Video 1" width="150">
+    </div>
+    <div class="media-item" data-toggle="modal" data-target="#videoModal2">
+      <img src="https://www.svgrepo.com/show/13672/play-button.svg" alt="Play Video 2" width="150">
+    </div>
+    <!-- Add more video items as needed -->
+  </div>
+</section>
+
+<!-- Video Modals -->
+<div class="modal fade" id="videoModal1" tabindex="-1" role="dialog" aria-labelledby="videoModal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModal1Label">History of Ice</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Video.js Player -->
+        <video
+                id="vid2"
+                class="video-js vjs-default-skin"
+                controls
+                width="600" height="350"
+                data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=tLwyfFT5VF8"}] }'
+        >
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-labelledby="videoModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModal2Label">History of Forks</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Video.js Player -->
+        <video
+                id="vid2"
+                class="video-js vjs-default-skin"
+                controls
+                width="600" height="350"
+                data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=Om7YKQelbGs"}] }'
+        >
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section id="pictures">
+  <h2>My Projects</h2>
+  <div class="media-container">
+    <div class="media-item" data-toggle="modal" data-target="#imageModal1">
+      <img src="https://www.svgrepo.com/show/13678/photo-camera.svg" alt="Sample Image 1" width="150">
+    </div>
+    <div class="media-item" data-toggle="modal" data-target="#imageModal2">
+      <img src="https://www.svgrepo.com/show/13678/photo-camera.svg" alt="Sample Image 2" width="150">
+    </div>
+    <!-- Add more image items as needed -->
+  </div>
+</section>
+
+<!-- Image Modals -->
+<div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModal1Label"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModal1Label">Inside the office</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="https://media.discordapp.net/attachments/1168655667297517700/1193446904416174141/da_honky_an_rnd_lab_working_on_scientific_things_9eb3557a-a3d8-434f-bb55-f131ed449c1e.png?ex=65acbf0b&is=659a4a0b&hm=5c13a778d5e3ebd68bf17c18a767e256a487fed1797a4123d8ebcd7f00ed1c03&=&format=webp&quality=lossless&width=936&height=936" alt="Sample Image 1" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModal2Label"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModal2Label">Outside the office</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="https://media.discordapp.net/attachments/1168655667297517700/1193425798380650606/da_honky_a_construction_worksite_showed_as_a_picture_to_adverti_e12dfe0f-e4d5-4f48-b9d3-7eccc1fb3ff6.png?ex=65acab63&is=659a3663&hm=2c8949d7f420173aac0979f5a331b11fba52e0317b3d9db10dd04ff61e849f50&=&format=webp&quality=lossless&width=936&height=936" alt="Sample Image 2" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section id="contact">
+<div id="contactclickbutton">
+    <div class="columns">
+      <div class="column is-full">
+        <button id="contactme-button" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
+          <img src="https://www.svgrepo.com/show/13683/edit.svg" id="contactme-image">
+        </button>
+      </div>
+    </div>
+  <div class="collapse" id="contactForm">
+    <div class="columns">
+        <div class="column is-half">
+          <form action="mailto:your@email.com" method="post" enctype="text/plain">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Your Name" name="name">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="email" placeholder="Your Email" name="email">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Message</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="Your Message" name="message"></textarea>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button class="button is-primary" type="submit">Send Email</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Add other useful tools or information in the second column -->
+        <div class="column is-half">
+          <h3>Other Tools</h3>
+          <!-- Add links or tools as needed -->
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">GitHub</a></li>
+            <!-- Add more links or tools as needed -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <h2>My Resume</h2>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <div class="resume-preview">
+          <canvas id="pdf-canvas"></canvas>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <!-- Your resume content goes here -->
+          <button class="resume-download-btn"><a href="https://writing.colostate.edu/guides/documents/resume/functionalsample.pdf" download>Download Resume</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // If you're using a worker, specify its location
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
+
+    // Function to render a specific page of the PDF
+    function renderPage(pageNumber, pdfDoc) {
+      pdfDoc.getPage(pageNumber).then(function(page) {
+        var canvas = document.getElementById('pdf-canvas');
+        var ctx = canvas.getContext('2d');
+        var viewport = page.getViewport({ scale: 1.5 });
+
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        page.render({
+          canvasContext: ctx,
+          viewport: viewport
+        });
+      });
+    }
+
+    // Load the PDF
+    pdfjsLib.getDocument('functionalsample.pdf').promise.then(function(pdfDoc) {
+      // Render the first page
+      renderPage(1, pdfDoc);
+    });
+  </script>
+</section>
+
+
+
+
+<!-- Bootstrap JS and Popper.js scripts -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="Youtube.min.js"></script>
+
+<footer>
+  <p>&copy; 2024 Your Portfolio. All rights reserved.</p>
+</footer>
+
+</body>
+
+</html>
