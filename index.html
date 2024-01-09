@@ -114,7 +114,7 @@
    margin: auto 0;
  }
  #contactclickbutton{
-   margin-left: 45vw;
+   margin-left: 40vw;
  }
   </style>
 </head>
@@ -152,7 +152,7 @@
       <div class="modal-body">
         <!-- Video.js Player -->
         <video
-                id="vid2"
+                id="vid1"
                 class="video-js vjs-default-skin"
                 controls
                 width="600" height="350"
@@ -237,9 +237,15 @@
   </div>
 </div>
 
-
 <section id="contact">
-<div id="contactclickbutton">
+  <div class="column is-half"> <!-- Keep the second column half-width for both mobile and desktop view -->
+    <h3>Other Tools</h3>
+    <ul>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">GitHub</a></li>
+    </ul>
+  </div>
+  <div id="contactclickbutton">
     <div class="columns">
       <div class="column is-full">
         <button id="contactme-button" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
@@ -247,9 +253,9 @@
         </button>
       </div>
     </div>
-  <div class="collapse" id="contactForm">
-    <div class="columns">
-        <div class="column is-half">
+    <div class="collapse" id="contactForm">
+      <div class="columns">
+        <div class="column is-full"> <!-- Make this column full-width for mobile view -->
           <form action="mailto:your@email.com" method="post" enctype="text/plain">
             <div class="field">
               <label class="label">Name</label>
@@ -276,20 +282,12 @@
             </div>
           </form>
         </div>
-        <!-- Add other useful tools or information in the second column -->
-        <div class="column is-half">
-          <h3>Other Tools</h3>
-          <!-- Add links or tools as needed -->
-          <ul>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">GitHub</a></li>
-            <!-- Add more links or tools as needed -->
-          </ul>
-        </div>
       </div>
     </div>
   </div>
+
 </section>
+
 
 <section id="resume">
   <h2>My Resume</h2>
