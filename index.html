@@ -116,14 +116,46 @@
  #contactclickbutton{
    margin-left: 40vw;
  }
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 100px 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      opacity: 0; /* Set initial opacity to 0 */
+      animation: fadeIn 1.5s ease-in-out forwards; /* Define the fadeIn animation */
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
 <body>
-
-<header>
-  <h1>Your Name</h1>
-  <p>Web Developer</p>
+<header style="background-image: url('https://media.discordapp.net/attachments/1168655667297517700/1194084969526595665/da_honky_a_curcuit_board_background_banner_2c6ec64f-6214-45dc-80e4-2257956b5e23.png?ex=65af1149&is=659c9c49&hm=ccfc64bb2f67323804e599acd3eab7aea201933bfc8c15aabf5e3b8c2b891111&=&format=webp&quality=lossless&width=936&height=936');">
+  <div>
+    <h1>Dakoda Hensley</h1>
+    <p>Web Developer</p>
+  </div>
 </header>
 
 <section id="videos">
