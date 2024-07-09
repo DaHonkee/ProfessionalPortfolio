@@ -154,6 +154,57 @@
         transform: translateY(0);
       }
     }
+    #pictures {
+      background-image: url('Gemini_Generated_Image_xtlmchxtlmchxtlm.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh; /* This makes the section at least as tall as the viewport */
+      padding: 50px 20px; /* Add some padding to ensure content doesn't touch the edges */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    #pictures::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      z-index: 1;
+    }
+
+    #pictures h2,
+    #pictures .media-container {
+      position: relative;
+      z-index: 2; /* Ensure content is above the overlay */
+      color: white; /* Make text white for better visibility */
+    }
+
+    .media-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+      opacity: 60%;
+    }
+
+    .media-item {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      padding: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .media-item:hover {
+      transform: scale(1.05);
+    }
     #videos {
       background-image: url('https://media.discordapp.net/attachments/1168655667297517700/1194090408897163275/da_honky_a_background_photo_of_astral_colors_11b771dc-9b3b-4ca0-aace-9944f05bc6c9.png?ex=65af165a&is=659ca15a&hm=e69ec32bf1b066443d1becfa4b44ea81ee1a7d417f71fc72fa7a774a8c559071&=&format=webp&quality=lossless&width=936&height=936'); /* Replace 'your-background-image-url.jpg' with the actual URL of your background image */
       background-size: cover;
@@ -178,18 +229,19 @@
       color: #fff; /* Set text color to contrast with the background */
       padding: 50px 0; /* Adjust padding as needed */
     }
+
   </style>
 </head>
 
 <body>
-<header style="background-image: url('Gemini_Generated_Image_7o1mdb7o1mdb7o1m.jpg');">
+<header style="background-image: url('Gemini_Generated_Image_7o1md97o1md97o1m.jpg');">
   <div>
     <h1>Dakoda Hensley</h1>
     <p>WebDev</p>
   </div>
 </header>
 
-<section id="videos">
+<section id="videos" style="background-image: url('PNG image (1).jpeg'); background-size: cover; background-position: center;">
   <h2>My Presentations</h2>
   <div class="media-container">
     <div class="media-item" data-toggle="modal" data-target="#videoModal1">
@@ -251,8 +303,7 @@
   </div>
 </div>
 
-
-<section id="pictures">
+<section id="pictures" style="background-image: url('Gemini_Generated_Image_xtlmchxtlmchxtlm.jpg'); background-size: cover; background-position: center;">
   <h2>My Projects</h2>
   <div class="media-container">
     <div class="media-item" data-toggle="modal" data-target="#imageModal1">
