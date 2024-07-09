@@ -198,3 +198,33 @@ p {
     color: white;
     text-decoration: none;
   }
+#resume {
+        background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        padding: 50px 0;
+    }
+
+#resume .title,
+#resume .content {
+    color: #fff;
+}
+
+#resume .resume-preview {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#resume .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#resume .button:hover {
+    background-color: #0056b3;
+}
