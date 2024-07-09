@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
   <link href="//vjs.zencdn.net/8.3.0/video-js.min.css" rel="stylesheet">
@@ -402,30 +403,37 @@
 
 </section>
 
-
-<section id="resume">
-  <h2>My Resume</h2>
+<section id="resume" class="section resume-section">
   <div class="container">
+    <h2 class="title is-2 has-text-white">My Resume</h2>
     <div class="columns">
       <div class="column is-two-thirds">
-        <div class="resume-preview">
+        <button id="toggle-resume" class="button is-primary mb-4">
+          <span class="icon">
+            <i class="fas fa-eye"></i>
+          </span>
+          <span>Show Resume Preview</span>
+        </button>
+        <div id="resume-preview" class="resume-preview" style="display: none;">
           <canvas id="pdf-canvas"></canvas>
         </div>
       </div>
       <div class="column">
         <div class="content">
-          <!-- Your resume content goes here -->
-          <button class="resume-download-btn"><a href="https://writing.colostate.edu/guides/documents/resume/functionalsample.pdf" download>Download Resume</a></button>
+          <button class="button is-info resume-download-btn">
+            <a href="https://writing.colostate.edu/guides/documents/resume/functionalsample.pdf" download>
+              Download Resume
+            </a>
+          </button>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // If you're using a worker, specify its location
+    // PDF.js initialization
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
 
-    // Function to render a specific page of the PDF
     function renderPage(pageNumber, pdfDoc) {
       pdfDoc.getPage(pageNumber).then(function(page) {
         var canvas = document.getElementById('pdf-canvas');
@@ -442,10 +450,45 @@
       });
     }
 
-    // Load the PDF
-    pdfjsLib.getDocument('Resume_DHH_2023.pdf').promise.then(function(pdfDoc) {
-      // Render the first page
-      renderPage(1, pdfDoc);
+    // Toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('toggle-resume');
+      const resumePreview = document.getElementById('resume-preview');
+      let isPdfLoaded = false;
+
+      if (toggleButton && resumePreview) {
+        toggleButton.addEventListener('click', function() {
+          if (resumePreview.style.display === 'none') {
+            resumePreview.style.display = 'block';
+            resumePreview.style.opacity = '1';
+
+            if (!isPdfLoaded) {
+              pdfjsLib.getDocument('Resume_2024.pdf').promise.then(function(pdfDoc) {
+                renderPage(1, pdfDoc);
+                isPdfLoaded = true;
+              });
+            }
+          } else {
+            resumePreview.style.opacity = '0';
+            setTimeout(() => {
+              resumePreview.style.display = 'none';
+            }, 500);
+          }
+
+          // Toggle button icon and text
+          const icon = toggleButton.querySelector('.icon i');
+          const text = toggleButton.querySelector('span:last-child');
+          if (icon.classList.contains('fa-eye')) {
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+            text.textContent = 'Hide Resume Preview';
+          } else {
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+            text.textContent = 'Show Resume Preview';
+          }
+        });
+      } else {
+        console.error('Toggle button or resume preview element not found');
+      }
     });
   </script>
 </section>
