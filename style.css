@@ -80,7 +80,7 @@ footer {
 }
 
 #resume a {
-    color: #007bff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
@@ -191,7 +191,7 @@ p {
   }
 
   .resume-download-btn:hover {
-    background-color: #3287e6;
+    background-color: #e3e3e3;
   }
 
   .resume-download-btn a {
@@ -205,6 +205,7 @@ p {
         background-repeat: no-repeat;
         color: #fff;
         padding: 50px 0;
+    margin-bottom: 60px;
     }
 
 #resume .title,
@@ -227,4 +228,14 @@ p {
 
 #resume .button:hover {
     background-color: #0056b3;
+}
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px; /* Added margin-top */
 }
