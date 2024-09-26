@@ -2,528 +2,243 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
-  <link href="//vjs.zencdn.net/8.3.0/video-js.min.css" rel="stylesheet">
-  <script src="//vjs.zencdn.net/8.3.0/video.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <meta charset="UTF-8">
-  <title>Your Portfolio</title>
-  <!-- Bootstrap CSS link -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Dakoda Hensley - Innovative Software Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    @media (max-width: 768px) {
-      .modal-lg {
-        max-width: 90%;
-      }
-      #pdf-canvas {
-        max-width: 100%;
-        height: auto;
-      }
-      /* Add more responsive styles as needed */
-    }
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color: #f8f9fa;
-    }
-
-    header {
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-      padding: 2em;
-    }
-
-    section {
-      padding: 3em;
-      background-color: white;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      margin: 0px;
-      border-radius: 0px;
-    }
-    #contact {
-      padding: 3em;
-      background-color: white;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      margin: 10px;
-      border-radius: 25px;
-    }
-
-    h2 {
-      color: #343a40;
-    }
-
-    .media-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-
-    .media-item {
-      margin: 1em;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .media-item:hover {
-      transform: scale(1.1);
-    }
-
-    .modal-content {
-      text-align: center;
-      padding: 2em;
-    }
-    .modal-body{
-
-    }
-
-    footer {
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-      padding: 1em;
-      bottom:0;
-      position: fixed;
-      width: 100%;
-      margin-top: 3000px;
-      font-size: x-small;
-    }
-
-    #resume a {
-      color: #fafafa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    #resume a:hover {
-      text-decoration: underline;
-    }
-
-    .resume-download-btn {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .resume-download-btn:hover {
-      background-color: #0056b3;
-    }
-    #contactme-button{
-      background-color: rgba(0,0,0,0);
-      width:100px;
-      height:100px
-    }
- .is-centered{
-   margin: auto 0;
- }
- #contactclickbutton{
-   margin-left: 40vw;
- }
-    header {
-      position: relative;
-      text-align: center;
-      color: white;
-      padding: 100px 0;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
- h1 {
-  color: white;
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in-out forwards;
-  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
-  padding: 10px 20px; /* Add some padding for better readability */
-  border-radius: 5px; /* Optional: rounds the corners of the background */
-
-}
-    p {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    #pictures {
-      background-image: url('Gemini_Generated_Image_xtlmchxtlmchxtlm.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh; /* This makes the section at least as tall as the viewport */
-      padding: 50px 20px; /* Add some padding to ensure content doesn't touch the edges */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    #pictures::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-      z-index: 1;
-    }
-
-    #pictures h2,
-    #pictures .media-container {
-      position: relative;
-      z-index: 2; /* Ensure content is above the overlay */
-      color: white; /* Make text white for better visibility */
-    }
-
-    .media-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 30px;
-      opacity: 60%;
-    }
-
-    .media-item {
-      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-      padding: 15px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .media-item:hover {
-      transform: scale(1.05);
-    }
-    #videos {
-      background-image: url('https://media.discordapp.net/attachments/1168655667297517700/1194090408897163275/da_honky_a_background_photo_of_astral_colors_11b771dc-9b3b-4ca0-aace-9944f05bc6c9.png?ex=65af165a&is=659ca15a&hm=e69ec32bf1b066443d1becfa4b44ea81ee1a7d417f71fc72fa7a774a8c559071&=&format=webp&quality=lossless&width=936&height=936'); /* Replace 'your-background-image-url.jpg' with the actual URL of your background image */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff; /* Set text color to contrast with the background */
-      padding: 50px 0; /* Adjust padding as needed */
-    }
-    #pictures {
-      background-image: url('https://media.discordapp.net/attachments/1168655667297517700/1194090682277703772/da_honky_a_background_photo_of_astral_colors_4e157dac-0aa3-48b8-b67e-dfb43e57e2b2.png?ex=65af169b&is=659ca19b&hm=2ae7851eb2736efc5ba186d0ae97bd870ba5fee28080b29285f8a66cb4945ac4&=&format=webp&quality=lossless&width=936&height=936'); /* Replace 'your-background-image-url.jpg' with the actual URL of your background image */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff; /* Set text color to contrast with the background */
-      padding: 50px 0; /* Adjust padding as needed */
-    }
-    #contact {
-      background-image: url('https://media.discordapp.net/attachments/1168655667297517700/1194095667098943599/da_honky_a_background_photo_of_cyberspace_4c92a755-7047-4c2d-9c3a-6d8c00a24a72.png?ex=65af1b40&is=659ca640&hm=679699c66ba28d2fc857616ce9496c5baa6fdccbcff7a3efccc5e42210221f26&=&format=webp&quality=lossless&width=936&height=936'); /* Replace 'your-background-image-url.jpg' with the actual URL of your background image */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff; /* Set text color to contrast with the background */
-      padding: 50px 0; /* Adjust padding as needed */
-    }
-    #resume {
-      background-image: url('Gemini_Generated_Image_xtlmchxtlmchxtlm.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff;
-      padding: 50px 0;
-      margin-bottom: 60px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
 </head>
 
 <body>
 <header style="background-image: url('Gemini_Generated_Image_7o1md97o1md97o1m.jpg');">
-  <div>
+  <div class="container">
     <h1>Dakoda Hensley</h1>
-    <p>Software Developer</p>
+    <p>Innovative Software Developer</p>
   </div>
 </header>
 
-<section id="videos" style="background-image: url('PNG image (1).jpeg'); background-size: cover; background-position: center;">
-  <h2>My Presentations</h2>
-  <div class="media-container">
-    <div class="media-item" data-toggle="modal" data-target="#videoModal1">
-      <img src="https://www.svgrepo.com/show/13672/play-button.svg" alt="Play Video 1" width="150">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#presentations">Presentations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
     </div>
-    <div class="media-item" data-toggle="modal" data-target="#videoModal2">
-      <img src="https://www.svgrepo.com/show/13672/play-button.svg" alt="Play Video 2" width="150">
+  </div>
+</nav>
+
+<section id="projects" style="background-image: url('Gemini_Generated_Image_xtlmchxtlmchxtlm.jpg');">
+  <div class="container">
+    <h2>Innovative Projects</h2>
+    <div class="row section-content">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">JDCS.pro</h5>
+            <p class="card-text">A cutting-edge professional website showcasing my extensive work and diverse skill set. Features responsive design and interactive elements.</p>
+            <a href="https://jdcs.pro" target="_blank" class="btn btn-primary">Explore Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Dynamic Chebakia</h5>
+            <p class="card-text">An interactive web application demonstrating advanced frontend development skills and creative design. Utilizes modern JavaScript frameworks and CSS animations.</p>
+            <a href="https://dynamic-chebakia-f49f19.netlify.app" target="_blank" class="btn btn-primary">Discover Project</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Add more video items as needed -->
   </div>
 </section>
 
-<!-- Video Modals -->
-<div class="modal fade" id="videoModal1" tabindex="-1" role="dialog" aria-labelledby="videoModal1Label" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="videoModal1Label">History of Ice</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<section id="presentations" style="background-image: url('PNG image (1).jpeg');">
+  <div class="container">
+    <h2>Engaging Presentations</h2>
+    <div class="row section-content">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">History of Ice</h5>
+            <p class="card-text">An captivating journey through time, exploring the fascinating history and crucial importance of ice in our world. Discover how ice has shaped civilizations and ecosystems.</p>
+            <a href="https://www.youtube.com/watch?v=tLwyfFT5VF8" target="_blank" class="btn btn-primary">Watch Presentation</a>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <!-- Video.js Player -->
-        <video
-                id="vid1"
-                class="video-js vjs-default-skin"
-                controls
-                width="600" height="350"
-                data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=tLwyfFT5VF8"}] }'
-        >
-        </video>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-labelledby="videoModal2Label" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="videoModal2Label">History of Forks</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Video.js Player -->
-        <video
-                id="vid2"
-                class="video-js vjs-default-skin"
-                controls
-                width="600" height="350"
-                data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=Om7YKQelbGs"}] }'
-        >
-        </video>
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">History of Forks</h5>
+            <p class="card-text">A compelling exploration of the evolution of forks, tracing their journey from ancient times to modern dining. Learn about the cultural and technological impacts of this humble utensil.</p>
+            <a href="https://www.youtube.com/watch?v=Om7YKQelbGs" target="_blank" class="btn btn-primary">View Presentation</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-<section id="pictures" style="background-image: url('Gemini_Generated_Image_xtlmchxtlmchxtlm.jpg'); background-size: cover; background-position: center;">
-  <h2>My Projects</h2>
-  <div class="media-container">
-    <div class="media-item" data-toggle="modal" data-target="#imageModal1">
-      <img src="https://www.svgrepo.com/show/13678/photo-camera.svg" alt="Sample Image 1" width="150">
-    </div>
-    <div class="media-item" data-toggle="modal" data-target="#imageModal2">
-      <img src="https://www.svgrepo.com/show/13678/photo-camera.svg" alt="Sample Image 2" width="150">
-    </div>
-    <!-- Add more image items as needed -->
   </div>
 </section>
 
-<!-- Image Modals -->
-<div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModal1Label"
-     aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="imageModal1Label">Inside the office</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+<section id="resume" class="section resume-section">
+  <div class="container">
+    <h2>Professional Resume</h2>
+    <div class="row section-content">
+      <div class="col-md-8">
+        <button id="toggle-resume" class="btn btn-primary mb-4">
+            <span class="icon">
+              <i class="fas fa-eye"></i>
+            </span>
+          <span>Show Resume Preview</span>
         </button>
+        <div id="resume-preview" class="resume-preview" style="display: none;">
+          <canvas id="pdf-canvas"></canvas>
+        </div>
       </div>
-      <div class="modal-body">
-        <img src="https://media.discordapp.net/attachments/1168655667297517700/1193446904416174141/da_honky_an_rnd_lab_working_on_scientific_things_9eb3557a-a3d8-434f-bb55-f131ed449c1e.png?ex=65acbf0b&is=659a4a0b&hm=5c13a778d5e3ebd68bf17c18a767e256a487fed1797a4123d8ebcd7f00ed1c03&=&format=webp&quality=lossless&width=936&height=936" alt="Sample Image 1" width="100%">
+      <div class="col-md-4">
+        <div class="content">
+          <a href="Resume_2024.pdf" download class="btn btn-info btn-lg btn-block resume-download-btn">
+            <i class="fas fa-download mr-2"></i>Download Resume
+          </a>
+          <p class="mt-3">My resume highlights my professional experience, technical skills, and educational background in software development.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModal2Label"
-     aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="imageModal2Label">Outside the office</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+<section id="contact" style="background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg');">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <div class="row section-content">
+      <div class="col-md-6 mb-4">
+        <h3>Connect with Me</h3>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a></li>
+          <li><a href="#" class="text-white"><i class="fab fa-github mr-2"></i>GitHub</a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="mt-3">Feel free to reach out for collaborations, job opportunities, or just to say hello!</p>
+      </div>
+      <div class="col-md-6 mb-4">
+        <button id="contactme-button" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
+          <i class="fas fa-envelope mr-2"></i>Contact Me
         </button>
-      </div>
-      <div class="modal-body">
-        <img src="https://media.discordapp.net/attachments/1168655667297517700/1193425798380650606/da_honky_a_construction_worksite_showed_as_a_picture_to_adverti_e12dfe0f-e4d5-4f48-b9d3-7eccc1fb3ff6.png?ex=65acab63&is=659a3663&hm=2c8949d7f420173aac0979f5a331b11fba52e0317b3d9db10dd04ff61e849f50&=&format=webp&quality=lossless&width=936&height=936" alt="Sample Image 2" width="100%">
-      </div>
-    </div>
-  </div>
-</div>
-
-<section id="contact"style="background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg'); background-size: cover; background-position: center;">
-  <div class="column is-half"> <!-- Keep the second column half-width for both mobile and desktop view -->
-    <h3>Other Tools</h3>
-    <ul>
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="#">GitHub</a></li>
-    </ul>
-  </div>
-  <div id="contactclickbutton">
-    <div class="columns">
-      <div class="column is-full">
-        <button id="contactme-button" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
-          <img src="mail-reception-svgrepo-com.svg" id="contactme-image">
-        </button>
-      </div>
-    </div>
-    <div class="collapse" id="contactForm">
-      <div class="columns">
-        <div class="column is-full"> <!-- Make this column full-width for mobile view -->
+        <div class="collapse mt-3" id="contactForm">
           <form action="mailto:your@email.com" method="post" enctype="text/plain">
-            <div class="field">
-              <label class="label">Name</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Your Name" name="name">
-              </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" name="name" required>
             </div>
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input" type="email" placeholder="Your Email" name="email">
-              </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" name="email" required>
             </div>
-            <div class="field">
-              <label class="label">Message</label>
-              <div class="control">
-                <textarea class="textarea" placeholder="Your Message" name="message"></textarea>
-              </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="4" placeholder="Your Message" name="message" required></textarea>
             </div>
-            <div class="field">
-              <div class="control">
-                <button class="button is-primary" type="submit">Send Email</button>
-              </div>
-            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-
 </section>
 
- <section id="resume" class="section resume-section">
-    <div class="container">
-      <h2 class="title is-2 has-text-white">My Resume</h2>
-      <div class="columns">
-        <div class="column is-two-thirds">
-          <button id="toggle-resume" class="button is-primary mb-4">
-            <span class="icon">
-              <i class="fas fa-eye"></i>
-            </span>
-            <span>Show Resume Preview</span>
-          </button>
-          <div id="resume-preview" class="resume-preview" style="display: none;">
-            <canvas id="pdf-canvas"></canvas>
-          </div>
-        </div>
-        <div class="column">
-          <div class="content">
-            <button class="button is-info resume-download-btn">
-              <a href="https://writing.colostate.edu/guides/documents/resume/functionalsample.pdf" download>
-                Download Resume
-              </a>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ... (script remains the same) ... -->
-  </section>
-
-  <script>
-    // PDF.js initialization
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
-
-    function renderPage(pageNumber, pdfDoc) {
-      pdfDoc.getPage(pageNumber).then(function(page) {
-        var canvas = document.getElementById('pdf-canvas');
-        var ctx = canvas.getContext('2d');
-        var viewport = page.getViewport({ scale: 1.5 });
-
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        page.render({
-          canvasContext: ctx,
-          viewport: viewport
-        });
-      });
-    }
-
-    // Toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleButton = document.getElementById('toggle-resume');
-      const resumePreview = document.getElementById('resume-preview');
-      let isPdfLoaded = false;
-
-      if (toggleButton && resumePreview) {
-        toggleButton.addEventListener('click', function() {
-          if (resumePreview.style.display === 'none') {
-            resumePreview.style.display = 'block';
-            resumePreview.style.opacity = '1';
-
-            if (!isPdfLoaded) {
-              pdfjsLib.getDocument('Resume_2024.pdf').promise.then(function(pdfDoc) {
-                renderPage(1, pdfDoc);
-                isPdfLoaded = true;
-              });
-            }
-          } else {
-            resumePreview.style.opacity = '0';
-            setTimeout(() => {
-              resumePreview.style.display = 'none';
-            }, 500);
-          }
-
-          // Toggle button icon and text
-          const icon = toggleButton.querySelector('.icon i');
-          const text = toggleButton.querySelector('span:last-child');
-          if (icon.classList.contains('fa-eye')) {
-            icon.classList.replace('fa-eye', 'fa-eye-slash');
-            text.textContent = 'Hide Resume Preview';
-          } else {
-            icon.classList.replace('fa-eye-slash', 'fa-eye');
-            text.textContent = 'Show Resume Preview';
-          }
-        });
-      } else {
-        console.error('Toggle button or resume preview element not found');
-      }
-    });
-  </script>
-</section>
-
-
-
-
-<!-- Bootstrap JS and Popper.js scripts -->
+<footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2024 Dakoda Hensley. All rights reserved.</p>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="Youtube.min.js"></script>
+<script>
+  // PDF.js initialization
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
 
-<footer>
-  <p>&copy; 2024 Your Portfolio. All rights reserved.</p>
-</footer>
+  function renderPage(pageNumber, pdfDoc) {
+    pdfDoc.getPage(pageNumber).then(function(page) {
+      var canvas = document.getElementById('pdf-canvas');
+      var ctx = canvas.getContext('2d');
+      var viewport = page.getViewport({ scale: 1.5 });
 
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      page.render({
+        canvasContext: ctx,
+        viewport: viewport
+      });
+    });
+  }
+
+  // Toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-resume');
+    const resumePreview = document.getElementById('resume-preview');
+    let isPdfLoaded = false;
+
+    if (toggleButton && resumePreview) {
+      toggleButton.addEventListener('click', function() {
+        if (resumePreview.style.display === 'none') {
+          resumePreview.style.display = 'block';
+          resumePreview.style.opacity = '1';
+
+          if (!isPdfLoaded) {
+            pdfjsLib.getDocument('Resume_2024.pdf').promise.then(function(pdfDoc) {
+              renderPage(1, pdfDoc);
+              isPdfLoaded = true;
+            }).catch(function(error) {
+              console.error('Error loading PDF:', error);
+              resumePreview.innerHTML = '<p>Error loading PDF. Please try downloading instead.</p>';
+            });
+          }
+        } else {
+          resumePreview.style.opacity = '0';
+          setTimeout(() => {
+            resumePreview.style.display = 'none';
+          }, 500);
+        }
+
+        // Toggle button icon and text
+        const icon = toggleButton.querySelector('.icon i');
+        const text = toggleButton.querySelector('span:last-child');
+        if (icon.classList.contains('fa-eye')) {
+          icon.classList.replace('fa-eye', 'fa-eye-slash');
+          text.textContent = 'Hide Resume Preview';
+        } else {
+          icon.classList.replace('fa-eye-slash', 'fa-eye');
+          text.textContent = 'Show Resume Preview';
+        }
+      });
+    } else {
+      console.error('Toggle button or resume preview element not found');
+    }
+  });
+
+  // Intersection Observer for animations
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.section-content').forEach(section => {
+    sectionObserver.observe(section);
+  });
+</script>
 </body>
 
 </html>

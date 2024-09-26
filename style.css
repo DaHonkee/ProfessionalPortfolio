@@ -1,158 +1,33 @@
-@media (max-width: 768px) {
-    .modal-lg {
-        max-width: 90%;
-    }
-    #pdf-canvas {
-        max-width: 100%;
-        height: auto;
-    }
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #ecf0f1;
+    --background-color: #34495e;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 header {
-    background-color: #343a40;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-align: center;
-    padding: 2em;
-    position: relative;
     padding: 100px 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-section {
-    padding: 3em;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 0px;
-    border-radius: 0px;
-}
-
-#contact {
-    padding: 3em;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    border-radius: 25px;
-}
-
-h2 {
-    color: #343a40;
-}
-
-.media-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.media-item {
-    margin: 1em;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.media-item:hover {
-    transform: scale(1.1);
-}
-
-.modal-content {
-    text-align: center;
-    padding: 2em;
-}
-
-footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-#resume a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#resume a:hover {
-    text-decoration: underline;
-}
-
-.resume-download-btn {
-    background-color: #08ff00;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.resume-download-btn:hover {
-    background-color: #36ff00;
-}
-
-#contactme-button {
-    background-color: rgba(0,0,0,0);
-    width: 100px;
-    height: 100px;
-}
-
-.is-centered {
-    margin: auto 0;
-}
-
-#contactclickbutton {
-    margin-left: 40vw;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
-}
-
-p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#pictures, #videos, #contact {
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    padding: 50px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    color: #fff;
+    overflow: hidden;
 }
 
-#pictures::before, #videos::before, #contact::before {
+header::before {
     content: '';
     position: absolute;
     top: 0;
@@ -161,81 +36,309 @@ p {
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-} #toggle-resume {
-    transition: background-color 0.3s ease;
-    margin-bottom: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-  }
+}
 
-  #toggle-resume:hover {
-    background-color: #3273dc;
-  }
+header h1, header p {
+    position: relative;
+    z-index: 2;
+}
 
-  .resume-preview {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: opacity 0.5s ease-in-out;
-  }
+h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    animation: fadeInDown 1.5s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
 
-  #pdf-canvas {
-    max-width: 100%;
-    height: auto;
-  }
+p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
 
-  .resume-download-btn {
-    transition: background-color 0.3s ease;
-  }
-
-  .resume-download-btn:hover {
-    background-color: #e3e3e3;
-  }
-
-  .resume-download-btn a {
-    color: white;
-    text-decoration: none;
-  }
-#resume {
-        background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: #fff;
-        padding: 50px 0;
-    margin-bottom: 60px;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-#resume .title,
-#resume .content {
-    color: #fff;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+    background-color: rgba(44, 62, 80, 0.9) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+section .container {
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-size: 3em;
+    text-align: center;
+    animation: fadeInLeft 1s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover h2::after {
+    transform: scaleX(1);
+}
+
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+#resume {
+    background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-color);
+    padding: 100px 0;
 }
 
 #resume .resume-preview {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 10px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    backdrop-filter: blur(10px);
 }
 
-#resume .button {
-    background-color: #007bff;
-    color: white;
+#pdf-canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.resume-download-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
     border: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#resume .button:hover {
-    background-color: #0056b3;
+.resume-download-btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
 }
+
+#contact {
+    background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+}
+
+#contactme-button {
+    background-color: var(--secondary-color);
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contactme-button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
 footer {
-    background-color: #343a40;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px; /* Added margin-top */
+    padding: 20px 0;
+    position: relative;
+}
+
+.list-unstyled a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.list-unstyled a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+#toggle-resume {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#toggle-resume:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+}
+
+.section-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--text-color);
+}
+
+.form-control::placeholder {
+    color: rgba(236, 240, 241, 0.7);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+    color: var(--text-color);
 }
