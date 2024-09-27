@@ -1,12 +1,15 @@
 :root {
-    --primary-color: #2c3e50;
+    --primary-color: #061e3d;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
-    --text-color: #333333;
+    --text-color: #dcdcdc;
     --background-color: #f4f4f4;
     --projects-background: #e8e8e8;
     --presentations-background: #d0d0d0;
     --resume-background: #b8b8b8;
+}
+#projects{
+    background-image: url("replicate-prediction-t3025v1tthrm60cj67nv7g4mv8.webp");
 }
 
 body {
@@ -111,7 +114,7 @@ section .container {
 }
 
 h2 {
-    color: var(--primary-color);
+    color: white;
     margin-bottom: 40px;
     font-size: 3em;
     text-align: center;
@@ -176,15 +179,15 @@ section:hover h2::after {
 }
 
 #projects {
-    background-color: var(--projects-background);
+    background-image: url("replicate-prediction-t3025v1tthrm60cj67nv7g4mv8.webp");
 }
 
 #presentations {
-    background-color: var(--presentations-background);
+    background-image: url("replicate-prediction-xjzdpztctnrm40cj67mtqqyy94-2.webp");
 }
 
 #resume {
-    background-color: var(--resume-background);
+    background-image: url("replicate-prediction-2ds3k3qyknrm20cj67mvpzyqsc.webp");
     color: var(--text-color);
     padding: 100px 0;
 }
@@ -309,6 +312,10 @@ footer {
 }
 .card-text{
     font-size: 4mm;
+    color: black;
+}
+.card-title{
+    color: black;
 }
 .section-content {
     opacity: 0;
