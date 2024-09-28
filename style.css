@@ -177,6 +177,23 @@ section:hover h2::after {
     border-color: var(--accent-color);
     transform: scale(1.05);
 }
+#projects, #presentations, #resume, #contact {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+#projects::before, #presentations::before, #resume::before, #contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
 
 #projects {
     background-image: url("replicate-prediction-t3025v1tthrm60cj67nv7g4mv8.webp");
@@ -188,8 +205,16 @@ section:hover h2::after {
 
 #resume {
     background-image: url("replicate-prediction-2ds3k3qyknrm20cj67mvpzyqsc.webp");
-    color: var(--text-color);
-    padding: 100px 0;
+}
+
+#contact {
+    background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg');
+}
+#projects, #presentations, #resume, #contact {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
 }
 
 #resume .resume-preview {
@@ -327,7 +352,10 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-
+section .container {
+    position: relative;
+    z-index: 2;
+}
 .social-icons {
     display: flex;
     justify-content: center;
