@@ -1,232 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Dakoda Hensley - Innovative Software Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Dakoda Hensley | Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header style="background-image: url('replicate-prediction-hxrn37b07srm40cj67ma190ddg.webp');">
-  <div class="container">
-    <h1>Dakoda Hensley</h1>
-    <p>Innovative Software Developer</p>
-  </div>
-</header>
+    <!-- Dynamic Background Canvas -->
+    <canvas id="particles"></canvas>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#schedule-consultation">Schedule Consultation</a></li>
-        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<section id="projects">
-  <div class="container">
-    <h2>Innovative Projects</h2>
-    <div class="row section-content">
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">JDCS.pro</h5>
-            <p class="card-text">A cutting-edge professional website showcasing my extensive work and diverse skill set. Features responsive design and interactive elements.</p>
-            <a href="https://jdcs.pro" target="_blank" class="btn btn-primary">Explore Project</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Reel Photography</h5>
-            <p class="card-text">An interactive web application demonstrating advanced frontend development skills and creative design. Utilizes modern JavaScript frameworks and CSS animations.</p>
-            <a href="https://reelphotography.netlify.app" target="_blank" class="btn btn-primary">Discover Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="schedule-consultation">
-  <div class="container">
-    <h2>Schedule a Consultation</h2>
-    <div class="section-content">
-      <!-- Calendly inline widget begin -->
-      <div class="calendly-container" style="padding: 20px; max-width: 800px; margin: 0 auto;">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/dakoda-h-hensley/30min?background_color=e4be87&primary_color=0c4496" style="min-width:320px;height:500px;max-width:100%;"></div>
-      </div>
-      <!-- Calendly inline widget end -->
-    </div>
-  </div>
-</section>
-
-<section id="resume" class="section resume-section">
-  <div class="container">
-    <h2>Professional Resume</h2>
-    <div class="row section-content">
-      <div class="col-md-8">
-        <button id="toggle-resume" class="btn btn-primary mb-4">
-            <span class="icon">
-              <i class="fas fa-eye"></i>
-            </span>
-          <span>Show Resume Preview</span>
-        </button>
-        <div id="resume-preview" class="resume-preview" style="display: none;">
-          <canvas id="pdf-canvas"></canvas>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="content">
-          <a href="Resume_2024.pdf" download class="btn btn-info btn-lg btn-block resume-download-btn">
-            <i class="fas fa-download mr-2"></i>Download Resume
-          </a>
-          <p class="mt-3">My resume highlights my professional experience, technical skills, and educational background in software development.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" style="background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg');">
-  <div class="container">
-    <h2 id="bottomh2">Get in Touch</h2>
-    <div class="row section-content">
-      <div class="col-md-6 mb-4">
-        <h3>Connect with Me</h3>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-white"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a></li>
-          <li><a href="#" class="text-white"><i class="fab fa-github mr-2"></i>GitHub</a></li>
-        </ul>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-        </div>
-        <p class="mt-3">Feel free to reach out for collaborations, job opportunities, or just to say hello!</p>
-      </div>
-      <div class="col-md-6 mb-4">
-        <button id="contactme-button" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
-          <i class="fas fa-envelope mr-2"></i>Contact Me
-        </button>
-        <div class="collapse mt-3" id="contactForm">
-          <form action="mailto:your@email.com" method="post" enctype="text/plain">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">DH</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your Email" name="email" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" rows="4" placeholder="Your Message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<footer class="bg-dark text-white text-center py-3">
-  <p>&copy; 2024 Dakoda Hensley. All rights reserved.</p>
-</footer>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Dakoda Hensley">Dakoda Hensley</h1>
+                <div class="typewriter">
+                    <span id="typewriter-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">Transforming ideas into exceptional digital experiences</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-  // PDF.js initialization
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p class="section-subtitle">Passionate Full-Stack Developer & Problem Solver</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <p>I'm a versatile full-stack developer with a passion for creating innovative digital solutions. Whether it's building complex web applications, developing mobile apps, or solving challenging technical problems, I'm always ready to take on new challenges.</p>
+                        <p>My approach combines technical expertise with creative problem-solving, ensuring that every project not only functions flawlessly but also delivers an exceptional user experience.</p>
+                        <div class="key-points">
+                            <div class="point">
+                                <i class="fas fa-code"></i>
+                                <h3>Clean Code</h3>
+                                <p>Writing maintainable, efficient code</p>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>Responsive Design</h3>
+                                <p>Creating seamless experiences across devices</p>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Performance</h3>
+                                <p>Optimizing for speed and efficiency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skills-wrapper">
+                        <div class="skill-category">
+                            <h3>Frontend</h3>
+                            <div class="skill-tags">
+                                <span>React</span>
+                                <span>Vue.js</span>
+                                <span>Angular</span>
+                                <span>JavaScript</span>
+                                <span>TypeScript</span>
+                                <span>HTML5</span>
+                                <span>CSS3/SASS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Backend</h3>
+                            <div class="skill-tags">
+                                <span>Node.js</span>
+                                <span>Python</span>
+                                <span>Java</span>
+                                <span>PHP</span>
+                                <span>SQL</span>
+                                <span>MongoDB</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Methods</h3>
+                            <div class="skill-tags">
+                                <span>Git</span>
+                                <span>Docker</span>
+                                <span>CI/CD</span>
+                                <span>Agile</span>
+                                <span>TDD</span>
+                                <span>REST APIs</span>
+                                <span>GraphQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  function renderPage(pageNumber, pdfDoc) {
-    pdfDoc.getPage(pageNumber).then(function(page) {
-      var canvas = document.getElementById('pdf-canvas');
-      var ctx = canvas.getContext('2d');
-      var viewport = page.getViewport({ scale: 1.5 });
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p class="section-subtitle">Showcasing My Best Work</p>
+            </div>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">UI/UX</button>
+            </div>
+            <div class="row project-grid">
+                <div class="col-lg-6 project-item" data-category="web">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="replicate-prediction-t3025v1tthrm60cj67nv7g4mv8.webp" alt="JDCS.pro">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://jdcs.pro" target="_blank" class="btn btn-light">Visit Site</a>
+                                    <a href="#" class="btn btn-outline-light">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>JDCS.pro</h3>
+                            <p>A cutting-edge professional website showcasing extensive work and diverse skill set. Features responsive design and interactive elements.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 project-item" data-category="design">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="replicate-prediction-2ds3k3qyknrm20cj67mvpzyqsc.webp" alt="Reel Photography">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://reelphotography.netlify.app" target="_blank" class="btn btn-light">Visit Site</a>
+                                    <a href="#" class="btn btn-outline-light">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Reel Photography</h3>
+                            <p>An interactive web application demonstrating advanced frontend development skills and creative design. Utilizes modern JavaScript frameworks and CSS animations.</p>
+                            <div class="project-tags">
+                                <span>Vue.js</span>
+                                <span>GSAP</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Services</h2>
+                <p class="section-subtitle">What I Can Do For You</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Full-stack web applications with modern technologies and best practices. From simple websites to complex web apps.</p>
+                        <ul class="service-features">
+                            <li>Custom Web Applications</li>
+                            <li>E-commerce Solutions</li>
+                            <li>CMS Development</li>
+                            <li>API Integration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Development</h3>
+                        <p>Native and cross-platform mobile applications that provide seamless user experiences across all devices.</p>
+                        <ul class="service-features">
+                            <li>iOS & Android Apps</li>
+                            <li>Cross-platform Solutions</li>
+                            <li>Progressive Web Apps</li>
+                            <li>App Maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Technical Solutions</h3>
+                        <p>Custom technical solutions and consulting services to solve complex problems and optimize performance.</p>
+                        <ul class="service-features">
+                            <li>System Architecture</li>
+                            <li>Performance Optimization</li>
+                            <li>Technical Consulting</li>
+                            <li>Code Review & Refactoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      page.render({
-        canvasContext: ctx,
-        viewport: viewport
-      });
-    });
-  }
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p class="section-subtitle">Let's Create Something Amazing Together</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h3>Ready to Start Your Project?</h3>
+                        <p>I'm available for freelance projects and full-time opportunities. Let's discuss how I can help bring your ideas to life.</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <h4>Email</h4>
+                                <p>dakoda.h.hensley@gmail.com</p>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h4>Location</h4>
+                                <p>United States</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form-wrapper">
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/dakoda-h-hensley/30min?background_color=e4be87&primary_color=0c4496" style="min-width:320px;height:500px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  // Toggle functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('toggle-resume');
-    const resumePreview = document.getElementById('resume-preview');
-    let isPdfLoaded = false;
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Dakoda Hensley. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    if (toggleButton && resumePreview) {
-      toggleButton.addEventListener('click', function() {
-        if (resumePreview.style.display === 'none') {
-          resumePreview.style.display = 'block';
-          resumePreview.style.opacity = '1';
-
-          if (!isPdfLoaded) {
-            pdfjsLib.getDocument('Resume_2024.pdf').promise.then(function(pdfDoc) {
-              renderPage(1, pdfDoc);
-              isPdfLoaded = true;
-            }).catch(function(error) {
-              console.error('Error loading PDF:', error);
-              resumePreview.innerHTML = '<p>Error loading PDF. Please try downloading instead.</p>';
-            });
-          }
-        } else {
-          resumePreview.style.opacity = '0';
-          setTimeout(() => {
-            resumePreview.style.display = 'none';
-          }, 500);
-        }
-
-        // Toggle button icon and text
-        const icon = toggleButton.querySelector('.icon i');
-        const text = toggleButton.querySelector('span:last-child');
-        if (icon.classList.contains('fa-eye')) {
-          icon.classList.replace('fa-eye', 'fa-eye-slash');
-          text.textContent = 'Hide Resume Preview';
-        } else {
-          icon.classList.replace('fa-eye-slash', 'fa-eye');
-          text.textContent = 'Show Resume Preview';
-        }
-      });
-    } else {
-      console.error('Toggle button or resume preview element not found');
-    }
-  });
-
-  // Intersection Observer for animations
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.section-content').forEach(section => {
-    sectionObserver.observe(section);
-  });
-</script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
