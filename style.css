@@ -127,7 +127,6 @@ h2 {
     color:#d0d0d0;
 }
 
-
 h2::after {
     content: '';
     display: block;
@@ -177,14 +176,15 @@ section:hover h2::after {
     border-color: var(--accent-color);
     transform: scale(1.05);
 }
-#projects, #presentations, #resume, #contact {
+
+#projects, #schedule-consultation, #resume, #contact {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
 }
 
-#projects::before, #presentations::before, #resume::before, #contact::before {
+#projects::before, #schedule-consultation::before, #resume::before, #contact::before {
     content: '';
     position: absolute;
     top: 0;
@@ -199,7 +199,7 @@ section:hover h2::after {
     background-image: url("replicate-prediction-t3025v1tthrm60cj67nv7g4mv8.webp");
 }
 
-#presentations {
+#schedule-consultation {
     background-image: url("replicate-prediction-xjzdpztctnrm40cj67mtqqyy94-2.webp");
 }
 
@@ -210,11 +210,34 @@ section:hover h2::after {
 #contact {
     background-image: url('Gemini_Generated_Image_7y46ef7y46ef7y46.jpg');
 }
-#projects, #presentations, #resume, #contact {
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
+
+.calendly-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.calendly-inline-widget {
+    min-width: 320px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 0.8s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #resume .resume-preview {
@@ -334,7 +357,17 @@ footer {
     .card {
         margin-bottom: 30px;
     }
+
+    .calendly-container {
+        padding: 10px;
+    }
+    
+    .calendly-inline-widget {
+        height: 450px;
+        min-width: 280px;
+    }
 }
+
 .card-text{
     font-size: 4mm;
     color: black;
@@ -352,10 +385,12 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
 section .container {
     position: relative;
     z-index: 2;
 }
+
 .social-icons {
     display: flex;
     justify-content: center;
