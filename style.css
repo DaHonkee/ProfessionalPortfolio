@@ -96,10 +96,10 @@ body {
 /* Glitch Effect */
 .glitch {
     position: relative;
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-                -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-                0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-    animation: glitch 500ms infinite;
+    text-shadow: 0.08em 0 0 rgba(255, 0, 0, 0.85),
+                -0.04em -0.08em 0 rgba(0, 255, 0, 0.85),
+                0.04em 0.08em 0 rgba(0, 0, 255, 0.85);
+    animation: glitch 300ms infinite;
 }
 
 .glitch::before,
@@ -113,16 +113,16 @@ body {
 }
 
 .glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 #ff00c1;
+    left: 3px;
+    text-shadow: -3px 0 #ff00c1;
     clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-anim 5s infinite linear alternate-reverse;
+    animation: glitch-anim 2s infinite linear alternate-reverse;
 }
 
 .glitch::after {
-    left: -2px;
-    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-    animation: glitch-anim2 1s infinite linear alternate-reverse;
+    left: -3px;
+    text-shadow: -3px 0 #00fff9, 3px 3px #ff00c1;
+    animation: glitch-anim2 0.5s infinite linear alternate-reverse;
 }
 
 /* Typewriter Effect */
